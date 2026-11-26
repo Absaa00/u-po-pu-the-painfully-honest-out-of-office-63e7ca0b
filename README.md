@@ -6,7 +6,7 @@ Entry for the [make.fun bounty "The Painfully Honest Out-of-Office"](https://mak
 
 ## How it works
 
-`main.py` (Python 3, standard library only, no network) writes one sentence to `/output/entry.txt` (honouring `MAKEFUN_OUTPUT_DIR` when set). The text is fixed and deterministic: two runs produce byte-identical output.
+`main.py` (Python 3, standard library only, no network) writes one sentence to `/output/entry.txt` (honouring `MAKEFUN_OUTPUT_DIR` when set). The text is fixed and deterministic: two runs produce byte-identical output. Before writing, the program validates its own text — non-blank, at most 200 characters, exactly one sentence — and refuses to write an invalid entry.
 
 ## The reply
 

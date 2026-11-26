@@ -15,7 +15,18 @@ TEXT = (
 )
 
 
+def validate(text: str) -> None:
+    """Fail loudly instead of handing the judge an invalid entry."""
+    if not text.strip():
+        raise SystemExit("entry is blank")
+    if len(text) > 200:
+        raise SystemExit(f"entry is {len(text)} characters, over the 200 cap")
+    if text.count(".") != 1 or not text.endswith("."):
+        raise SystemExit("entry must be exactly one sentence")
+
+
 def main() -> None:
+    validate(TEXT)
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
