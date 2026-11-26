@@ -1,0 +1,12 @@
+# generated artefacts and local caches — keep the repo to source only
+__pycache__/
+*.py[cod]
+.pytest_cache/
+output/
+entry.txt
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.venv/
+venv/
